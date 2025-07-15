@@ -16,11 +16,12 @@
  * 
  * 
  */
-
+import React from "react";
+import ReactDOM from "react-dom/client"
 
  const heading = React.createElement(
     "h1",
-    {id:"heading"},
+    {id:"heading",key:"firstChild"},
     "Hello World using React!!")
 
 const parent = React.createElement(
@@ -28,16 +29,16 @@ const parent = React.createElement(
     {id:"parent"},
     React.createElement(
         "div",
-        {id:"child"},
+        {id:"child",key:"firstChild1"},
         [
             React.createElement(
                 "h1",
-                {id:"heading"},
+                {id:"heading",key:"firstChild2"},
                 "I am H1 Tag!!!"
             ),
             React.createElement(
                 "h2",
-                {id:"heading2"},
+                {id:"heading2",key:"firstChild3"},  
                 "I am H2 Tag!!!"
             )
         ]
