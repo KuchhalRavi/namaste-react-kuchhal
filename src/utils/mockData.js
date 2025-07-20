@@ -1,12 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client"
-
-
-
- const root = ReactDOM.createRoot(document.getElementById("root"));
- // const root = ReactDOM.createRoot("root");
-
- const restaurantList = [
+export const restaurantList = [
     {
       "name": "Burger King",
       "rating": 4.3,
@@ -18,7 +10,7 @@ import ReactDOM from "react-dom/client"
     },
     {
       "name": "Subway",
-      "rating": 4.1,
+      "rating": 3.2,
       "delivery_time": "25–30 mins",
       "cuisines": ["Sandwiches", "Salads", "Healthy"],
       "location": "Sector 110",
@@ -54,7 +46,7 @@ import ReactDOM from "react-dom/client"
     },
     {
       "name": "Domino's Pizza",
-      "rating": 4.3,
+      "rating": 3,
       "delivery_time": "25–30 mins",
       "cuisines": ["Pizza", "Fast Food"],
       "location": "Sector 21",
@@ -72,7 +64,7 @@ import ReactDOM from "react-dom/client"
     },
     {
       "name": "Starbucks",
-      "rating": 4.5,
+      "rating": 3.9,
       "delivery_time": "30–35 mins",
       "cuisines": ["Cafe", "Coffee", "Bakery"],
       "location": "Sector 18",
@@ -108,7 +100,7 @@ import ReactDOM from "react-dom/client"
     },
     {
       "name": "Faasos",
-      "rating": 4.3,
+      "rating": 2.7,
       "delivery_time": "20–30 mins",
       "cuisines": ["Wraps", "Indian", "Fusion"],
       "location": "Sector 33",
@@ -143,62 +135,3 @@ import ReactDOM from "react-dom/client"
       "image_url": "https://images.unsplash.com/photo-1589302168068-964664d93dc0"
     }
   ]
-  
-
- const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"></img>
-            </div>
-            <div className="nav-items">
-                <ul className="nav-items-list">
-                    <li className="nav-items-label">Home</li>
-                    <li className="nav-items-label">About us</li>
-                    <li className="nav-items-label">Contact</li>
-                    <li className="nav-items-label">Cart</li>
-                </ul>
-            </div>
-
-        </div>
-    );
-    
- };
- const RestaurantCard = (props) =>{
-    const {name, rating, delivery_time, cuisines, location, starting_price, image_url} = props?.dataSet;
-    return (
-        <div className="res-card" style = {{backgroundColor:"yellow"}}>
-            <img className = "res-logo" src={image_url}/>
-            <h3>{name}</h3>
-            <h4>{rating}</h4>
-            <h4>{delivery_time}</h4>
-            <h4>{cuisines.join(", ")}</h4>
-        </div>
-    )
- }
-
- const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="restaurant-container">
-                {
-                    restaurantList.map((restaurant, index) => <RestaurantCard key={index} dataSet = {restaurant} />)
-
-                }
-            </div>
-        </div>
-    );
- };
-
- const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body />
-        </div>
-    );
- };
-    
-
- root.render(<AppLayout/>);
