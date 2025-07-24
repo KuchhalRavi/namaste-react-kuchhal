@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this is react learning by akshay saini",
   "scripts": {
-    "start" : "parcel index.html",
-    "build" : "parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "keywords": [
@@ -17,9 +17,10 @@
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 version",
     "last 2 firefox version"
   ]
