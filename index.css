@@ -64,3 +64,11 @@
     font-weight: bold;
     cursor: pointer;
 }
+.about{
+    background-color: #f2f2f2;
+}
+.user-card, .user-class-card{
+    padding:5px;
+    border: 1px solid black;
+
+}
