@@ -1,22 +1,30 @@
-import { useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
 import { useParams } from "react-router";
-import { MENU_API } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
-    
-    useEffect(() => {
-        fetchMenu() 
-    },[])
+    /** Start this code is now moved to useRestaurantmenu custom hook to increase more modularity */
+
     const {resId} = useParams();
-    console.log({resId})
-    const fetchMenu = async () => {
-        // const data = await fetch(`${MENU_API + resId}&catalog_qa=undefined&query=Chole%20Bhature&submitAction=ENTER`);
-        const data = await fetch(`${MENU_API + resId}`);
-        const json = await data.json();
-        setResInfo(json);
-    }
+    const resInfo = useRestaurantMenu(resId); 
+
+    // useEffect(() => {
+    //     fetchMenu() 
+    // },[])
+    // 
+    // console.log({resId})
+
+   
+
+    
+    // const fetchMenu = async () => {
+    //     // const data = await fetch(`${MENU_API + resId}&catalog_qa=undefined&query=Chole%20Bhature&submitAction=ENTER`);
+    //     const data = await fetch(`${MENU_API + resId}`);
+    //     const json = await data.json();
+    //     setResInfo(json);
+    // }
+
+    /** End this code is now moved to useRestaurantmenu custom hook to increase more modularity */
 
     const { name, costForTwoMessage, cuisines } = resInfo?.data?.cards[2]?.card?.card?.info || {};
     // const menuInfo = 

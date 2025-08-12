@@ -3,6 +3,7 @@ import { restaurantList } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineUser from "../utils/useOnlineUser";
 const Body = () => {
     const [restaurantData, setRestaurantData] = useState([]);
     const [searchValue, setSearchValue] = useState("");
@@ -34,7 +35,7 @@ const Body = () => {
     //         <h1>Loading...</h1>
     //     )
     // }
-
+    if(useOnlineUser() === false) return <h1>Looks Like you are offline now!!! Please check your internet connection</h1> 
     return restaurantData.length === 0 ? (
         <Shimmer />
     )  : (
